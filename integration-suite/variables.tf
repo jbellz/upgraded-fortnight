@@ -15,7 +15,7 @@ variable "subaccount_id" {
 variable "region" {
   type        = string
   description = "The region where the subaccount shall be created in."
-  default     = "us10"
+  default     = "us11"
 }
 variable "subaccount_domain" {
   type        = string
@@ -60,6 +60,12 @@ variable "service_admins" {
   type        = list(string)
   description = "Defines the users who are added to each subaccount as service administrators."
 }
+
+variable "integration_provisioners" {
+  type        = list(string)
+  description = "Defines the users who are added to activate the Integration Suite."
+}
+
 variable "developers" {
   type        = list(string)
   description = "Defines the colleagues who are added to services as developers."
