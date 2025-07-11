@@ -11,6 +11,7 @@ globalaccount     = "pacificgasandelectriccompany-01"
 region            = "us11"
 subaccount_name   = "Integration-dev"
 subaccount_domain = "pge-integration-dev"
+# directory_id      = " "
 
 # Set the subaccount_id to run the script in an existing subaccount, 
 # keep it empty to create a new one, for that you need the global account administration role
@@ -38,6 +39,3 @@ integration_provisioners = ["j96n@pge.com"]
 # Service plans - for testing the services you can set "free" as value, the free service plan 
 # is only supported for SAP BTP accounts  with the CPEA, BTPEA or Pay-as-you-go commercial model
 #####################################################################################
-build_workzone_service_plan = "standard"
-bas_service_plan            = "standard-edition"
-cicd_service_plan           = "default"

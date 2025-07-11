@@ -2,6 +2,11 @@ variable "globalaccount" {
   type        = string
   description = "The globalaccount subdomain where the sub account shall be created."
 }
+variable "directory_id" {
+  description = "The ID of the subaccounts parent entity."
+  type        = string
+  default     = "IT-Core"
+}
 variable "subaccount_name" {
   type        = string
   description = "The subaccount name."
@@ -21,35 +26,6 @@ variable "subaccount_domain" {
   type        = string
   description = "the subdomain of the subaccount being created."
   default     = null
-}
-variable "build_workzone_service_plan" {
-  type        = string
-  description = "The plan for the SAP Build Workzone subscription"
-  default     = "free"
-  validation {
-    condition     = contains(["free", "standard"], var.build_workzone_service_plan)
-    error_message = "Invalid value for build_workzone_service_plan. Only 'free' and 'standard' are allowed."
-  }
-}
-
-variable "bas_service_plan" {
-  type        = string
-  description = "The plan for SAP Business Application Studio subscription"
-  default     = "free"
-  validation {
-    condition     = contains(["free", "standard-edition"], var.bas_service_plan)
-    error_message = "Invalid value for SAP Business Application Studion. Only 'free' and 'standard-edition' are allowed."
-  }
-}
-
-variable "cicd_service_plan" {
-  type        = string
-  description = "The plan for Continous Integraion & Delivery subscription"
-  default     = "free"
-  validation {
-    condition     = contains(["free", "default"], var.cicd_service_plan)
-    error_message = "Invalid value for Continous Integraion & Delivery. Only 'free' and 'default' are allowed."
-  }
 }
 
 variable "subaccount_admins" {
